@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from '../../state/BlogProvider';
+import { useDispatch } from 'react-redux';
 import { deleteBlog } from '../../actions/blogActions';
 
 const ListItem = ({ title, text }) => {
