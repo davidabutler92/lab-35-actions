@@ -6,7 +6,6 @@ export const initialState = {
 
 export default function reducer(state = initialState, action) {
   const { blogs } = state;
-  console.log(blogs);
   switch (action.type) {
     case CREATE_BLOG:
       return {
