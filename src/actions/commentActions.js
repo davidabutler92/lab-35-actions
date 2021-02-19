@@ -4,8 +4,8 @@ export const createComment = (index, comment) => ({
   payload: { index, comment },
 });
 
-// export const DELETE_COMMENT = 'DELETE_COMMENT';
-// export const deleteComment = (index) => ({
-//   type: DELETE_COMMENT,
-//   payload: index,
-// });
+export const DELETE_COMMENT = 'DELETE_COMMENT';
+export const deleteComment = (index, commentIndex) => ({
+  type: DELETE_COMMENT,
+  payload: { index, commentIndex },
+});

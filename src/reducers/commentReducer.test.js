@@ -3,31 +3,21 @@ import { createComment, deleteComment } from '../actions/commentActions';
 
 describe('comments reducer', () => {
   it('creates a comment with the CREATE_COMMENT reducer', () => {
-    const state = {
-      comments: [],
-    };
+    const state = {};
 
-    const action = createComment({
-      title: 'some title',
-      text: 'some text',
-    });
+    const action = createComment(0, 'some comment');
 
     const newState = reducer(state, action);
 
-    expect(newState).toEqual({
-      comments: [{ title: 'some title', text: 'some text' }],
-    });
+    expect(newState).toEqual({ 0: ['some comment'] });
   });
 
   it('deletes a comment with the DELETE_COMMENT action', () => {
     const state = {
-      comments: [{ title: 'some comment', text: 'some text' }],
+      0: ['hello', 'goodbye'],
     };
-
-    const action = deleteComment('some comment');
-
-    expect(reducer(state, action)).toEqual({
-      comments: [],
-    });
+    const action = deleteComment(0, 0);
+    const newState = reducer(state, action);
+    expect(newState).toEqual({ 0: ['goodbye'] });
   });
 });

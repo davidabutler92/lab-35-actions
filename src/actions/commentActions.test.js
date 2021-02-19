@@ -1,14 +1,15 @@
-import { CREATE_COMMENT, createComment } from './commentActions';
+import { createComment, CREATE_COMMENT } from './commentActions';
 
 describe('comment actions', () => {
-  it('creates a comment using CREATE_COMMENT action', () => {
-    const action = createComment({
-      title: 'some title',
-      text: 'this is comment text',
-    });
+  it('handles the CREATE_COMMENT action', () => {
+    const action = createComment(0, 'some text');
+
     expect(action).toEqual({
       type: CREATE_COMMENT,
-      payload: { title: 'some title', text: 'this is comment text' },
+      payload: {
+        index: 0,
+        comment: 'some text',
+      },
     });
   });
 });
