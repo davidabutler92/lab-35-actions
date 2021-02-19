@@ -10,16 +10,19 @@ export default function reducer(state = initialState, action) {
     case CREATE_COMMENT:
       return {
         ...state,
-        comments: [...comments, action.payload],
+        comments: [
+          comments.map((comment, i) => {
+            if (i === action.payload.index) return action.payload.comment;
+            return comment;
+          }),
+        ],
       };
-    case DELETE_COMMENT:
-      return {
-        ...state,
-        comments: comments.filter(
-          (comment) => comment.title !== action.payload
-        ),
-      };
-    default:
-      return state;
+    // case DELETE_COMMENT:
+    //   return {
+    //     ...state,
+    //     comments: comments.filter((i) => i !== action.payload.index),
+    //   };
+    // default:
+    //   return state;
   }
 }

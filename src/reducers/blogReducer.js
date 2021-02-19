@@ -1,6 +1,6 @@
 import { CREATE_BLOG, DELETE_BLOG } from '../actions/blogActions';
 
-export const initialState = {
+const initialState = {
   blogs: [],
 };
 

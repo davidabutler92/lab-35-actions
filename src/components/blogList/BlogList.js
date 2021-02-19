@@ -6,7 +6,6 @@ import ListItem from './ListItem';
 
 const BlogList = () => {
   const blogs = useSelector(getBlogs);
-  console.log(blogs);
 
   const blogsList = blogs.map((blog) => (
     <li key={blog.title}>

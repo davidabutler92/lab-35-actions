@@ -7,8 +7,8 @@ describe('comment actions', () => {
       text: 'this is comment text',
     });
     expect(action).toEqual({
-      title: 'some title',
-      text: 'this is comment text',
+      type: CREATE_COMMENT,
+      payload: { title: 'some title', text: 'this is comment text' },
     });
   });
 });
