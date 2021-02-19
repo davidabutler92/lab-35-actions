@@ -1,10 +1,10 @@
 import { CREATE_BLOG, DELETE_BLOG } from '../actions/blogActions';
 
-export const initialState = {
+const initialState = {
   blogs: [],
 };
 
-export default function reducer(state, action) {
+export default function reducer(state = initialState, action) {
   const { blogs } = state;
   switch (action.type) {
     case CREATE_BLOG:
