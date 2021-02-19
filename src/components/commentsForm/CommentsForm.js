@@ -7,12 +7,11 @@ export default function CommentsForm() {
   const dispatch = useDispatch();
   const [text, setText] = useState('');
   const index = Number(useParams().id);
-  console.log(index);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(createComment({ index, text }));
+    dispatch(createComment(index, text));
   };
 
   return (
@@ -20,7 +19,7 @@ export default function CommentsForm() {
       <textarea
         type="text"
         placeholder="Comment..."
-        onChange={({ target }) => setText(target)}
+        onChange={({ target }) => setText(target.value)}
       ></textarea>
       <button type="submit">Send</button>
     </form>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deleteBlog } from '../../actions/blogActions';
 
-const ListItem = ({ title, text, index }) => {
+const ListItem = ({ title, index }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {
